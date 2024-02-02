@@ -6,12 +6,11 @@ Before(async function (this: ScenarioWorld, scenario: ITestCaseHookParameter) {
     console.log(`🥒 Running cucumber "${scenario.pickle.name}"`);
 
     const contextOptions = {
-
         recordVideo: {
-            dir: './reports/videos/'+scenario.pickle.name,
-        }
+            dir: `${env('VIDEO_PATH')}${scenario.pickle.name}`,
+        },
+    };
     
-    }
     const ready = await this.init(contextOptions);
     return ready;
 });
@@ -22,10 +21,10 @@ After(async function (this: ScenarioWorld, scenario: ITestCaseHookParameter) {
     } = this;
     const scenarioStatus = scenario.result?.status;
 
-    if(scenarioStatus === 'FAILED'){
+    if (scenarioStatus === 'FAILED') {
         const screenshot = await page.screenshot({
-            path: `./reports/screenshots/${scenario.pickle.name}.png`
-        })
+            path: `${env('SCREENSHOT_PATH')}${scenario.pickle.name}.png`,
+        });
         await this.attach(screenshot, 'image/png');
     }
 
