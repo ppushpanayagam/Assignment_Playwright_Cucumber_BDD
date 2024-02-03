@@ -1,7 +1,6 @@
 import {Given} from '@cucumber/cucumber';
 
 
-
 Given(
     /^the user on the play station page$/,
     async function() {
