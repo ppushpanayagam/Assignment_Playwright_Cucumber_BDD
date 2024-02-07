@@ -42,7 +42,7 @@ var ScenarioWorld = exports.ScenarioWorld = /*#__PURE__*/function (_World) {
             browserType = _playwright["default"][automationBrowser];
             _context.next = 5;
             return browserType.launch({
-              headless: process.env.HEADLESS !== 'false',
+              headless: process.env.HEADLESS === 'true',
               args: ['--disable-web-security', '--disable-features=IsolateOrigins,site-per-process']
             });
           case 5:

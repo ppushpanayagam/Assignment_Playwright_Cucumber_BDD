@@ -1,21 +1,15 @@
 Feature: Verify Playstation page carousel slides
 
-# Background:
-#     Given the user log into Sony application with valid credentials 
-#     When the user select playstation from the menu
-#     Then the user should be redirected  to playstation application
+Background: Successfully log into Sony application
+    Given the user log into Sony application with valid credentials 
+    When the user select playstation from the menu
+    Then the user should be redirected  to playstation application
 
   @dev
-  @smoke
-  @regression
-  Scenario: Successfully land on Playstation page
-    Given the user on the play station page
-    Then the user should see the required slides
-
-#   Scenario: Successfully verify required carousel slides are displayed
-#     Given the user on the playstation application home page
-#     When the user verify the all the carousel slides
-#     Then the carousel slides should be displayed  as expected 
+  Scenario: Successfully verify expected carousel slides are displayed
+    Given the user on the playstation application home page
+    # When the user verify the all the carousel slides
+    # Then the carousel slides should be displayed  as expected 
 
 # Scenario: Successfully verify displayed banner based on carousel slides selection
 #     Given the user on the playstation application home page

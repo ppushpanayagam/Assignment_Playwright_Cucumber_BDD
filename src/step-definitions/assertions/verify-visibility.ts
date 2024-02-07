@@ -3,7 +3,7 @@ import {expect} from "playwright/test";
 
 
 Then(
-    /^the user should see the required slides$/,
+    /^the user should be redirected  to playstation application$/,
     async function() {
 
         const {
@@ -13,6 +13,6 @@ Then(
         console.log("All the slides should be displayed");
 
         const content = await page.title();
-        await expect(content).toBe("Sony UK | Latest Technology News | Electronics | Entertainment");
+        await expect(content).toBe("PlayStation® Official Site: Consoles, Games, Accessories & More");
     }
 )
