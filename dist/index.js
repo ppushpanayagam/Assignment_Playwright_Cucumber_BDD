@@ -14,3 +14,4 @@ var common = "./src/features/**/*.feature                 --require-module ts-no
 var dev = exports.dev = "".concat(common, " --tags '@dev'");
 var smoke = exports.smoke = "".concat(common, " --tags '@smoke'");
 var regression = exports.regression = "".concat(common, " --tags '@regression'");
+console.log('\n🥒 ✨ 🥒 ✨ 🥒 ✨ 🥒 ✨ 🥒 ✨ 🥒 ✨ 🥒 ✨ 🥒 \n');

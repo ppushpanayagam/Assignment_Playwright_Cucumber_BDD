@@ -1,4 +1,4 @@
-Feature: Verify Playstation page
+Feature: Verify Playstation page carousel slides
 
 # Background:
 #     Given the user log into Sony application with valid credentials 
