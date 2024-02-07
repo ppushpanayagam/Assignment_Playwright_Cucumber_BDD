@@ -2,6 +2,7 @@
 
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 var _cucumber = require("@cucumber/cucumber");
+var _test = require("playwright/test");
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
@@ -124,4 +125,113 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         return _context2.stop();
     }
   }, _callee2, this, [[10, 25, 28, 31]]);
+})));
+(0, _cucumber.When)(/^the user on the playstation home page$/, /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+  var _this$screen2, page, context, content;
+  return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+    while (1) switch (_context3.prev = _context3.next) {
+      case 0:
+        _this$screen2 = this.screen, page = _this$screen2.page, context = _this$screen2.context;
+        _context3.next = 3;
+        return global.playStationPage.title();
+      case 3:
+        content = _context3.sent;
+        _context3.next = 6;
+        return (0, _test.expect)(content).toBe("PlayStation® Official Site: Consoles, Games, Accessories & More");
+      case 6:
+      case "end":
+        return _context3.stop();
+    }
+  }, _callee3, this);
+})));
+(0, _cucumber.When)(/^the carousel slides should be displayed as expected$/, /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+  var playStationPage, listOfSlideItems, listOfTiles, listOfBigBanners, tilesCount, arr, count, _iterator2, _step2, menu;
+  return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+    while (1) switch (_context4.prev = _context4.next) {
+      case 0:
+        playStationPage = global.playStationPage;
+        _context4.next = 3;
+        return playStationPage.$$('div.slider__control>div>div>figure>picture>img');
+      case 3:
+        listOfSlideItems = _context4.sent;
+        listOfTiles = 'div.slider__control:nth-child(' + '*' + ') > div:nth-child(1) > div';
+        listOfBigBanners = 'div.slider__slides:nth-child(1) > div:nth-child(' + '*' + ') > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div>div'; // listOfTiles.rep
+        tilesCount = listOfSlideItems.length;
+        arr = ['Tekken 8 keyart', 'February LNY Sale keyart', 'Like A Dragon keyart', 'TLOU keyart', 'Sterling Silver DualSense Wireless Controller product shot', 'genshin impact keyart', 'Suicide Squad keyart'];
+        count = 0;
+        _iterator2 = _createForOfIteratorHelper(listOfSlideItems);
+        _context4.prev = 10;
+        _iterator2.s();
+      case 12:
+        if ((_step2 = _iterator2.n()).done) {
+          _context4.next = 22;
+          break;
+        }
+        menu = _step2.value;
+        _context4.t0 = _test.expect;
+        _context4.next = 17;
+        return menu.getAttribute('alt');
+      case 17:
+        _context4.t1 = _context4.sent;
+        (0, _context4.t0)(_context4.t1).toBe(arr[count]);
+        count = count + 1;
+      case 20:
+        _context4.next = 12;
+        break;
+      case 22:
+        _context4.next = 27;
+        break;
+      case 24:
+        _context4.prev = 24;
+        _context4.t2 = _context4["catch"](10);
+        _iterator2.e(_context4.t2);
+      case 27:
+        _context4.prev = 27;
+        _iterator2.f();
+        return _context4.finish(27);
+      case 30:
+      case "end":
+        return _context4.stop();
+    }
+  }, _callee4, null, [[10, 24, 27, 30]]);
+})));
+(0, _cucumber.When)(/^the user select the slides only by one$/, /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+  var _this$screen3, page, context, playStationPage, listOfSlideItems, listOfTiles, listOfBigBanners, tilesCount, screenShots, screenCount, i, item;
+  return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+    while (1) switch (_context5.prev = _context5.next) {
+      case 0:
+        _this$screen3 = this.screen, page = _this$screen3.page, context = _this$screen3.context;
+        playStationPage = global.playStationPage;
+        _context5.next = 4;
+        return playStationPage.$$('div.slider__control>div>div>figure>picture>img');
+      case 4:
+        listOfSlideItems = _context5.sent;
+        listOfTiles = 'div.slider__control:nth-child(' + '*' + ') > div:nth-child(1) > div';
+        listOfBigBanners = 'div.slider__slides:nth-child(1) > div:nth-child(' + '*' + ') > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div>div'; // listOfTiles.rep
+        tilesCount = listOfSlideItems.length;
+        screenShots = ['Tekken8keyart.png', 'SuicideSquadkeyart.png', 'FebruaryLNYSalekeyart.png', 'LikeADragonkeyart.png', 'TLOUkeyart.png', 'SterlingSilver.png', 'genshinimpactkeyart.png', 'Applekeyart.png'];
+        screenCount = 0;
+        i = 1;
+      case 11:
+        if (!(i <= tilesCount)) {
+          _context5.next = 21;
+          break;
+        }
+        item = i.toString();
+        _context5.next = 15;
+        return playStationPage.locator(listOfTiles.replace('*', item)).click();
+      case 15:
+        _context5.next = 17;
+        return (0, _test.expect)(playStationPage.locator(listOfBigBanners.replace('*', item))).toHaveScreenshot(screenShots[screenCount]);
+      case 17:
+        screenCount = screenCount + 1;
+      case 18:
+        i++;
+        _context5.next = 11;
+        break;
+      case 21:
+      case "end":
+        return _context5.stop();
+    }
+  }, _callee5, this);
 })));
