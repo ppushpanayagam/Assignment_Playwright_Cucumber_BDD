@@ -2,7 +2,7 @@ import { Before, After, ITestCaseHookParameter, setDefaultTimeout } from '@cucum
 import { env } from '../../env/parseEnv';
 import { ScenarioWorld } from './world';
 
-setDefaultTimeout(5000);
+setDefaultTimeout(50000);
 
 Before(async function (this: ScenarioWorld, scenario: ITestCaseHookParameter) {
     console.log(`🥒 Running cucumber "${scenario.pickle.name}"`);

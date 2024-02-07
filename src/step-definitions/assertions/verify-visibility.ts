@@ -12,7 +12,7 @@ Then(
 
         console.log("All the slides should be displayed");
 
-        const content = await page.title();
+        const content = await global.playStationPage.title();
         await expect(content).toBe("PlayStation® Official Site: Consoles, Games, Accessories & More");
     }
 )

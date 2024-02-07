@@ -14,7 +14,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         page = this.screen.page;
         console.log("All the slides should be displayed");
         _context.next = 4;
-        return page.title();
+        return global.playStationPage.title();
       case 4:
         content = _context.sent;
         _context.next = 7;

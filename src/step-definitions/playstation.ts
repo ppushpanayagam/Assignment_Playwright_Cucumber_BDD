@@ -47,13 +47,14 @@ When(
             }
         }
 
-        const playStationPage = await pagePromise;
-        await playStationPage.waitForLoadState();
+        global.playStationPage = await pagePromise;
+        await global.playStationPage.waitForLoadState();
 
-        const acceptButton_PlayStationPage = await playStationPage.locator('#_evidon-accept-button');
+        const acceptButton_PlayStationPage = await global.playStationPage.locator('#_evidon-accept-button');
         await acceptButton_PlayStationPage.waitFor({state: "visible"})
         if(await acceptButton_PlayStationPage.isVisible()){
             await acceptButton_PlayStationPage.click();
         }
+
     }
 )

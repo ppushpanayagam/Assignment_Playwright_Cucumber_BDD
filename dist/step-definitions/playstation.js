@@ -43,7 +43,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   }, _callee, this);
 })));
 (0, _cucumber.When)(/^the user select playstation from the menu$/, /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-  var _this$screen, page, context, listOfMenu, pagePromise, _iterator, _step, menu, subMenu, playStationPage, acceptButton_PlayStationPage;
+  var _this$screen, page, context, listOfMenu, pagePromise, _iterator, _step, menu, subMenu, acceptButton_PlayStationPage;
   return _regeneratorRuntime().wrap(function _callee2$(_context2) {
     while (1) switch (_context2.prev = _context2.next) {
       case 0:
@@ -97,12 +97,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _context2.next = 33;
         return pagePromise;
       case 33:
-        playStationPage = _context2.sent;
+        global.playStationPage = _context2.sent;
         _context2.next = 36;
-        return playStationPage.waitForLoadState();
+        return global.playStationPage.waitForLoadState();
       case 36:
         _context2.next = 38;
-        return playStationPage.locator('#_evidon-accept-button');
+        return global.playStationPage.locator('#_evidon-accept-button');
       case 38:
         acceptButton_PlayStationPage = _context2.sent;
         _context2.next = 41;
